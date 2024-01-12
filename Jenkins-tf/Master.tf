@@ -5,7 +5,6 @@ resource "aws_instance" "Kube_Master_server" {
   key_name               = "mynewkey"
   vpc_security_group_ids = [aws_default_security_group.default_sg.id]
   subnet_id = aws_subnet.main.id
-  user_data              = templatefile("./master.sh", {})
 
   tags = {
     Name = "Kube-Master-server"
